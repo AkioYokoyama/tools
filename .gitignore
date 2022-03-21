@@ -1,0 +1,5 @@
+# Ignore local files
+shortcut/*.local.sh
+
+# environment
+.DS_Store
