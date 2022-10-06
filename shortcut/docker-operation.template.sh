@@ -8,7 +8,7 @@ cd $path
 if [ $command == "up" ]; then
     docker-compose $command -d
 elif [ -n "$container" ]; then
-    docker-compose $command $container
+    docker $command $container
 else
     docker-compose $command
 fi
