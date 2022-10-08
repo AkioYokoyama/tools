@@ -66,7 +66,7 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          {to: '/community/intro', label: 'Community', position: 'left'},
+          {to: '/projects/intro', label: 'Projects', position: 'left'},
           {to: '/blog', label: 'Blog', position: 'left'},
         ],
       },
@@ -98,10 +98,11 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'community',
-        path: 'community',
-        routeBasePath: 'community',
-        sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        id: 'projects',
+        path: 'projects',
+        routeBasePath: 'projects',
+        sidebarPath: require.resolve('./sidebarsProjects.js'),
+        remarkPlugins: [simplePlantUML],
       },
     ],
     [

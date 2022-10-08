@@ -50,9 +50,9 @@ sed -i '' "s/\"start\": \"docusaurus start\"/\"start\": \"docusaurus start --hos
 sed -i '' "s/\"serve\": \"docusaurus serve\"/\"serve\": \"docusaurus serve --host 0.0.0.0\"/g" package.json
 
 # additional docusaurus setting
-mkdir community
-touch community/intro.md
-echo 'Introduction' >> community/intro.md
-cp sidebars.js sidebarsCommunity.js
+mkdir projects
+touch projects/intro.md
+echo 'Introduction' >> projects/intro.md
+cp sidebars.js sidebarsProjects.js
 
 docker-compose up -d
