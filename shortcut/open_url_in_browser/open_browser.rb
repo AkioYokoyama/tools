@@ -6,7 +6,7 @@ class OpenBrowser
 
   def initialize
     keyword = ARGV[0]
-    sites = YAML.safe_load(open('urls.yml'))
+    sites = YAML.safe_load(File.open("#{__dir__}/urls.yml"))
     @url = sites[keyword]
   end
 
