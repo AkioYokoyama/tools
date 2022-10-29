@@ -4,20 +4,21 @@
 class OpenBrowser
   require 'yaml'
 
-  def execute
+  def initialize
     raise ArgumentError if ARGV.empty?
-
-    keyword = ARGV[0]
-    sites = YAML.safe_load(File.open("#{__dir__}/urls.yml"))
-    @url = sites[keyword]
-
-    raise NoMatchingPatternError if @url.nil?
-
-    system "open #{@url}"
   rescue ArgumentError => e
     puts "wrong number of arguments (given #{ARGV.count}, expected 1) (#{e})"
+  end
+
+  def execute
+    sites = YAML.safe_load(File.open("#{__dir__}/urls.yml"))
+    urls = ARGV.map { |keyword| sites[keyword] }
+    urls.compact!
+    raise NoMatchingPatternError if urls.empty?
+
+    system "open #{urls.join(' ')}"
   rescue NoMatchingPatternError => e
-    puts "#{keyword} does not exist in the list (#{e})"
+    puts "[#{ARGV.join(', ')}] does not exist in the list (#{e})"
   end
 end
 
