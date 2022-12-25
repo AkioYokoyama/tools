@@ -12,7 +12,7 @@ elif [ $option == "-d"  ]; then
 elif [ $option == "-b"  ]; then
     cargo run --release -q -- brow ${@:2}
 else
-    cargo run --release -q -- brow ${@:2}
+    cargo run --release -q -- brow ${@:1}
 fi
 
 cd - 1> /dev/null
