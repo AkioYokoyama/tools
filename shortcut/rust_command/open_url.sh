@@ -11,6 +11,8 @@ elif [ $option == "-d"  ]; then
     cargo run --release -q -- delete ${@:2}
 elif [ $option == "-b"  ]; then
     cargo run --release -q -- brow ${@:2}
+elif [ $option == "-f"  ]; then
+    cargo run --release -q -- freq
 else
     cargo run --release -q -- brow ${@:1}
 fi
