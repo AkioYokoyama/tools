@@ -4,17 +4,17 @@ option=$1
 cd $HOME/Public/workspace/Rust/open_browser
 
 if [ $option == "-l" ]; then
-    cargo run --release -q -- list
+    ./target/release/open_browser list
 elif [ $option == "-a"  ]; then
-    cargo run --release -q -- add ${@:2}
+    ./target/release/open_browser add ${@:2}
 elif [ $option == "-d"  ]; then
-    cargo run --release -q -- delete ${@:2}
+    ./target/release/open_browser delete ${@:2}
 elif [ $option == "-b"  ]; then
-    cargo run --release -q -- brow ${@:2}
+    ./target/release/open_browser brow ${@:2}
 elif [ $option == "-f"  ]; then
-    cargo run --release -q -- freq
+    ./target/release/open_browser freq
 else
-    cargo run --release -q -- brow ${@:1}
+    ./target/release/open_browser brow ${@:1}
 fi
 
 cd - 1> /dev/null
