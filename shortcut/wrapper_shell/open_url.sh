@@ -1,7 +1,7 @@
 #!/bin/bash
 option=$1
 
-cd $HOME/Public/workspace/Rust/open_browser
+cd $HOME/tools/shortcut/rust_command/open_browser
 
 if [ $option == "-l" ]; then
     ./target/release/open_browser list
