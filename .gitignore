@@ -1,5 +1,10 @@
 # Ignore local files
 shortcut/local/*
 
+# Ignore another repository
+shortcut/rust_command/*
+!shortcut/rust_command/rust-command-init.sh
+!shortcut/rust_command/rust-command-update.sh
+
 # environment
 .DS_Store
