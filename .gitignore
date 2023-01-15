@@ -1,8 +1,5 @@
 # Ignore local files
-shortcut/*.local.sh
-
-# open_url setting file
-shortcut/open_url_in_browser/urls.yml
+shortcut/local/*
 
 # environment
 .DS_Store
