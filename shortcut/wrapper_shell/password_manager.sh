@@ -1,20 +1,20 @@
 #!/bin/bash
 option=$1
 
-cd $HOME/Public/workspace/Rust/command_password_manager
+cd $HOME/tools/shortcut/rust_command/command_password_manager/
 
 if [ $option == "-l" ]; then
-    cargo run --release -q -- list
+    ./target/release/command_password_manager list
 elif [ $option == "-a"  ]; then
-    cargo run --release -q -- add ${@:2}
+    ./target/release/command_password_manager add ${@:2}
 elif [ $option == "-c"  ]; then
-    cargo run --release -q -- copy ${@:2}
+    ./target/release/command_password_manager ${@:2}
 elif [ $option == "-d"  ]; then
-    cargo run --release -q -- delete ${@:2}
+    ./target/release/command_password_manager ${@:2}
 elif [ $option == "-f"  ]; then
-    cargo run --release -q -- flush
+    ./target/release/command_password_manager flush
 else
-    cargo run --release -q -- brow ${@:1}
+    ./target/release/command_password_manager brow ${@:1}
 fi
 
 cd - 1> /dev/null
