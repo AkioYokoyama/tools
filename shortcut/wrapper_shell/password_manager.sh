@@ -8,10 +8,10 @@ if [ $option == "-l" ]; then
 elif [ $option == "-a"  ]; then
     ./target/release/command_password_manager add ${@:2}
 elif [ $option == "-c"  ]; then
-    ./target/release/command_password_manager ${@:2}
+    ./target/release/command_password_manager copy ${@:2}
 elif [ $option == "-d"  ]; then
     ./target/release/command_password_manager ${@:2}
-elif [ $option == "-f"  ]; then
+elif [ $option == "-t"  ]; then
     ./target/release/command_password_manager flush
 else
     ./target/release/command_password_manager brow ${@:1}
